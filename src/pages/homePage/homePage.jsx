@@ -3,7 +3,6 @@ import { ProductReducerContext } from "../../context/productReducerContext"
 
 export const HomePage = () => {
     const {products} = useContext(ProductReducerContext)
-    console.log(products)
 
   return (
     <div className="page flex justify-evenly items-center h-[75vh]">
