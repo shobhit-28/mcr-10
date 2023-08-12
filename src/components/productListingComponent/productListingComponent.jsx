@@ -2,7 +2,7 @@
 export const ProductListingComponent = ({ product }) => {
     console.log(product)
     return (
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 mb-4">
             <div className="w-32">
                 <img src={product.imageUrl} alt="product.name" />
             </div>

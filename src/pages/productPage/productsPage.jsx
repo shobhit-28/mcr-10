@@ -7,6 +7,7 @@ export const ProductsPage = () => {
 
     const [productList, setProductList] = useState(products)
     const [sortBy, setSortBy] = useState('')
+    const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false)
 
     const filterChangeHandler = value => {
         setProductList(products.filter((product) => product.department === value))
@@ -83,6 +84,36 @@ export const ProductsPage = () => {
                     })()}
                 </div>
             </div>
+
+            {isAddProductModalOpen && <div className="fixed h-screen w-full top-0 left-0 bg-black/30" onClick={() => setIsAddProductModalOpen(false)}>
+                <div className="" onClick={(event) => event.stopPropagation()}>
+                    <label htmlFor="dept" className="block">
+                        <select name="dept" id="dept" defaultValue='select'>
+                            <option value="select" disabled>Select Department</option>
+                            <option value="Kitchen" className="">Kitchen</option>
+                            <option value="Clothing" className="">Clothing</option>
+                            <option value="Toys" className="">Toys</option>
+                        </select>
+                    </label>
+                    <label htmlFor="name">
+                        <span className="block">Name:</span>
+                        <input type="text" name="name" id="name" className="border border-black" />
+                    </label>
+                    <label htmlFor="desc">
+                        <span className="block">Description:</span>
+                        <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+                    </label>
+                    <label htmlFor="price">
+                        <span className="block">Price:</span>
+                        <input type="text" name="" id="" className="border border-black" />
+                    </label>
+                    <label htmlFor=""></label>
+                    <label htmlFor=""></label>
+                    <label htmlFor=""></label>
+                    <label htmlFor=""></label>
+                    <label htmlFor=""></label>
+                </div>
+            </div>}
 
         </div>
     )
