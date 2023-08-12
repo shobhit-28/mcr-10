@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import {inventoryData} from '../data/data'
 import { productReducer } from "./productReducer";
 import { types } from "./types";
@@ -8,9 +8,17 @@ import { types } from "./types";
 export const ProductReducerContext = createContext();
 
 export const ProductHandler = ({children}) => {
+    const [dataFromLocalStorage, setDataFromLocalStorage] = useState(undefined)
+
+    useEffect(() => {
+        setDataFromLocalStorage(JSON.parse(localStorage.getItem('Product')))
+    }, [])
+
     const initialState = {
-        products : inventoryData
+        products : localStorage.getItem('Product') ? JSON.parse(localStorage.getItem('Product')).products : inventoryData
     }
+
+    console.log(!dataFromLocalStorage)
 
     const {
         ADD_NEW_PRODUCT
@@ -21,6 +29,7 @@ export const ProductHandler = ({children}) => {
     const addNewProduct = (product) => {
         dispatch({type: ADD_NEW_PRODUCT, payload: product})
     }
+
 
     return (
         <ProductReducerContext.Provider value={{

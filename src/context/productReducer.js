@@ -9,11 +9,15 @@ export const productReducer = (state, action) => {
 
     switch (action.type) {
         case ADD_NEW_PRODUCT:
+            localStorage.setItem('Product', JSON.stringify({
+                ...state,
+                products: [...state.products, { ...action.payload, id: uuidv4() }]
+            }))
             return {
                 ...state,
-                products: [...state.products, {...action.payload, id: uuidv4()}]
+                products: [...state.products, { ...action.payload, id: uuidv4() }]
             }
-    
+
         default:
             return state;
     }
