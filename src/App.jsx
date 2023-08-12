@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom"
 
 import { NavBar } from "./components/navBar/navBar"
 import { HomePage } from "./pages/homePage/homePage"
-import { DescPage } from "./pages/descPage/descPage"
+import { DeptPage } from "./pages/descPage/descPage"
 import { ProductsPage } from "./pages/productPage/productsPage"
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/description" element={<DescPage />} />
+        <Route path="/dept" element={<DeptPage />} />
         <Route path="/product" element={<ProductsPage />} />
       </Routes>
     </div>
