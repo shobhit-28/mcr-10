@@ -16,7 +16,7 @@ export const HomePage = () => {
         </div>
         <div className="w-60 h-60 bg-[#f2f2f2] flex flex-col items-center justify-center gap-8 rounded-xl">
             <span className="font-semibold text-3xl text-red-500">{products.filter(({stock}) => stock <= 10).length}</span>
-            <span className="text-2xl font-medium">Total Delivered</span>
+            <span className="text-2xl font-medium">Low Stock</span>
         </div>
     </div>
   )
