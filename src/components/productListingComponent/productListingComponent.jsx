@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom"
+
 /* eslint-disable react/prop-types */
 export const ProductListingComponent = ({ product }) => {
-    console.log(product)
+    const nav = useNavigate()
+
     return (
-        <div className="flex items-center gap-6 mb-4">
+        <div className="flex items-center gap-6 mb-4 cursor-pointer" onClick={() => nav(`/product/${product.id}`)}>
             <div className="w-32">
                 <img src={product.imageUrl} alt="product.name" />
             </div>
