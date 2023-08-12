@@ -17,11 +17,11 @@ export const DetailsPage = () => {
             <div className="flex flex-col gap-3">
                 <p className="font-medium text-lg">{`Price: $${product.price}`}</p>
                 <p className="font-medium text-lg">{`Stock: ${product.stock}`}</p>
-                <p className="font-medium text-lg">{`Supplier: $${product.supplier}`}</p>
-                <p className="font-medium text-lg">{`Department: $${product.department}`}</p>
-                <p className="font-medium text-lg">{`SKU: $${product.sku}`}</p>
-                <p className="font-medium text-lg">{`Delivered: $${product.delivered}`}</p>
-                <p className="font-medium text-lg">{`Description: $${product.description}`}</p>
+                <p className="font-medium text-lg">{`Supplier: ${product.supplier}`}</p>
+                <p className="font-medium text-lg">{`Department: ${product.department}`}</p>
+                <p className="font-medium text-lg">{`SKU: ${product.sku}`}</p>
+                <p className="font-medium text-lg">{`Delivered: ${product.delivered}`}</p>
+                <p className="font-medium text-lg">{`Description: ${product.description}`}</p>
             </div>
         </div>
     )
